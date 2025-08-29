@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+nltk
+spacy
+sentence-transformers
+faiss-cpu
+streamlit
+fastapi
+uvicorn
+python-dotenv
