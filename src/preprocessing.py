@@ -9,10 +9,8 @@ RAW_PATH = "data/raw/"
 PROCESSED_PATH = "data/processed/"
 
 def clean_text(text: str) -> str:
-    """
-    Basic cleanup: remove extra space, normalize currency symbols, strip text.
-    """
-    text = re.sub(r"\s+", " ", text)  # collapse multiple spaces/newlines
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"(\d+)\.\s([A-Z ]+)", r"\1. \2", text)  # keep numbering + heading together
     text = text.replace("USD", "$").replace("EUR", "€").replace("INR", "₹")
     return text.strip()
 
